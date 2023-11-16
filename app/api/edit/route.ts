@@ -22,7 +22,7 @@ export const POST = async (
       if (!id || !username || !userid || !title || !content) {
         return NextResponse.json({ message: "데이터가 부족합니다" });
       } else {
-        const [results] = await db.query(
+        const [results] = await db.query<RowDataPacket[]>(
           "UPDATE jun_database.board SET title = ?, content = ? WHERE id = ?",
           [title, content, id]
         );

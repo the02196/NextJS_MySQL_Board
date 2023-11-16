@@ -1,5 +1,4 @@
-import db from "@/db";
-import { NextRequest, NextResponse } from "next/server";
+import db from '@/db'
 import { RowDataPacket } from "mysql2/promise";
 import Link from "next/link";
 import { getServerSession } from "next-auth";
@@ -19,8 +18,7 @@ export default async function Home() {
   const perPage = 15;
   const offset = (page - 1) * perPage;
 
-  const [results] = await db.query<RowDataPacket[]>(
-    "SELECT * FROM jun_database.board order by date DESC limit ? offset ?",
+  const [results] = await db.query<RowDataPacket[]>("SELECT * FROM jun_database.board order by date DESC limit ? offset ?",
     [perPage, offset]
   );
   const [countResult] = await db.query<RowDataPacket[]>(
@@ -32,6 +30,7 @@ export default async function Home() {
   console.log(sessions);
 
   return (
+    
     <div className="mx-auto max-w-7xl p-6">
       <div className="flex justify-between item-center mb-6">
         <h1 className="text-2xl font-semibold">게시판</h1>
