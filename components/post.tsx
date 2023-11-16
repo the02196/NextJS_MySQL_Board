@@ -1,7 +1,4 @@
 'use client';
-import { faForward } from '@fortawesome/free-solid-svg-icons';
-import { faBackward } from '@fortawesome/free-solid-svg-icons/faBackward';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React,{useEffect,useState} from 'react';
@@ -88,7 +85,7 @@ export default function Post(){
         </div>        
         
         <div className="flex justify-center gap-x-5">
-        {page > 1 && <button onClick={() => setPage(1)} className='mb-4'><FontAwesomeIcon icon={faBackward}/></button>}
+        {page > 1 && <button onClick={() => setPage(1)} className='mb-4'></button>}
         {page > 5 && <button onClick={()=> {prevPage()}} className='bg-white border rounded text-sm mb-5 p-1.5'>이전</button>}
         {/* 숫자 5로 바꾸면 페이지가 6-11 / 12-17로 넘어감 */}
         {
@@ -103,7 +100,7 @@ export default function Post(){
             // })
         }
         {page < lastPage && <button onClick={()=>{nextpage()}} className='bg-white border rounded text-sm mb-5 p-1.5'>다음</button>}
-        {page < lastPage && <button onClick={() => setPage(lastPage)} className='mb-4'><FontAwesomeIcon icon={faForward}/></button>}
+        {page < lastPage && <button onClick={() => setPage(lastPage)} className='mb-4'></button>}
         </div>
         
         </>
