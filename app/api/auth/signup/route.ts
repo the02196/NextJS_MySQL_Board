@@ -21,7 +21,7 @@ export const POST = async (
 
     const hash = await bcrypt.hash(password, 10);
     
-    const [checkMember] = await db.query<RowDataPacket[]>('select count(*) as cnt from jun.member where email = ?', [email]);
+    const [checkMember] = await db.query<RowDataPacket[]>('select count(*) as cnt from jun_database.member where email = ?', [email]);
     const memberCnt = checkMember[0].cnt;
 
 
@@ -29,7 +29,7 @@ export const POST = async (
     if(memberCnt > 0){
       return NextResponse.json({message: "해당 이메일이 존재합니다."})
     }else{
-      await db.query('insert into jun.member (email, password, name) values(?,?,?)',[email, hash, name]);
+      await db.query('insert into jun_database.member (email, password, name) values(?,?,?)',[email, hash, name]);
       const data = {
         email : email,
         password : password

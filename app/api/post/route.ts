@@ -14,8 +14,8 @@ export const GET = async (
     const offset = (page - 1) * perPage;
 
     try{
-      const [results] = await db.query<RowDataPacket[]>('SELECT * FROM jun.board order by date DESC limit ? offset ?', [perPage, offset]);
-      const [countResult] = await db.query<RowDataPacket[]>('select count(*) as cnt from jun.board');
+      const [results] = await db.query<RowDataPacket[]>('SELECT * FROM jun_database.board order by date DESC limit ? offset ?', [perPage, offset]);
+      const [countResult] = await db.query<RowDataPacket[]>('select count(*) as cnt from jun_database.board');
       const totalCnt = countResult[0].cnt;
       // console.log(results)
 

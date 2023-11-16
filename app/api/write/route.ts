@@ -18,7 +18,7 @@ export const POST = async (
       if(!userid || !username || !title || !content){
         return NextResponse.json({message: "데이터가 부족합니다."});
       }else{
-        const [results] = await db.query('insert into jun.board (userid, username, title, content) VALUES (?, ?, ?, ?)', [userid, username, title, content]);
+        const [results] = await db.query('insert into jun_database.board (userid, username, title, content) VALUES (?, ?, ?, ?)', [userid, username, title, content]);
         return NextResponse.json({message: "성공", result: results});
       }    
 

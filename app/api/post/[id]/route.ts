@@ -5,7 +5,7 @@ import { RowDataPacket } from 'mysql2/promise';
 export const GET = async (req:NextRequest) : Promise<NextResponse> =>{
   const pathname = req.nextUrl.pathname;
   const postId = pathname.split('/').pop()
-  const [results] = await db.query<RowDataPacket[]>('SELECT * FROM jun.board where id = ?',[postId]);
+  const [results] = await db.query<RowDataPacket[]>('SELECT * FROM jun_database.board where id = ?',[postId]);
 
   return NextResponse.json({data:results})
 }

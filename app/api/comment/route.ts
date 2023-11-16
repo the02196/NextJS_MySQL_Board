@@ -22,11 +22,11 @@ export const POST = async (req: NextRequest): Promise<NextResponse> => {
         return NextResponse.json({ message: "데이터가 부족합니다." });
       } else {
         const [results] = await db.query<RowDataPacket[]>(
-          "insert into jun.comment (parentid, userid, username, content) values(?,?,?,?)",
+          "insert into jun_database.comment (parentid, userid, username, content) values(?,?,?,?)",
           [parentid, userid, username, content]
         );
         const [datas] = await db.query<RowDataPacket[]>(
-          "select * from jun.comment where parentid = ? ORDER BY id DESC",
+          "select * from jun_database.comment where parentid = ? ORDER BY id DESC",
           [parentid]
         );
         return NextResponse.json({ message: "성공", result: datas });
@@ -48,7 +48,7 @@ export const GET = async (req: NextRequest): Promise<NextResponse> => {
       // 배열에 쓰는 split 함수. /를 기준으로 마지막에 있는 id 값만 뗴어오는 방법
       console.log(parentid)
 
-      const [results] = await db.query<RowDataPacket[]>('select * from jun.comment where parentid = ? ORDER BY id DESC', [parentid])
+      const [results] = await db.query<RowDataPacket[]>('select * from jun_database.comment where parentid = ? ORDER BY id DESC', [parentid])
       return NextResponse.json({message: "성공", result:results})
     }catch(error){
       return NextResponse.json({error: error})

@@ -49,7 +49,7 @@ export const authOptions : any= {
       async authorize(credentials): Promise<User | null> {
         try {
           const [results] = await db.query<RowDataPacket[]>(
-            "select * from jun.member where email = ?",
+            "select * from jun_database.member where email = ?",
             [credentials?.email]
           );
           const userResult = results[0];

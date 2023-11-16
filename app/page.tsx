@@ -20,11 +20,11 @@ export default async function Home() {
   const offset = (page - 1) * perPage;
 
   const [results] = await db.query<RowDataPacket[]>(
-    "SELECT * FROM jun.board order by date DESC limit ? offset ?",
+    "SELECT * FROM jun_database.board order by date DESC limit ? offset ?",
     [perPage, offset]
   );
   const [countResult] = await db.query<RowDataPacket[]>(
-    "select count(*) as cnt from jun.board"
+    "select count(*) as cnt from jun_database.board"
   );
   const totalCnt = countResult[0].cnt;
 

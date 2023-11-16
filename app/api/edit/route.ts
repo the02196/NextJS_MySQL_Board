@@ -23,7 +23,7 @@ export const POST = async (
         return NextResponse.json({ message: "데이터가 부족합니다" });
       } else {
         const [results] = await db.query(
-          "UPDATE jun.board SET title = ?, content = ? WHERE id = ?",
+          "UPDATE jun_database.board SET title = ?, content = ? WHERE id = ?",
           [title, content, id]
         );
         return NextResponse.json({ message: "수정을 하였습니다", result: results });
