@@ -51,6 +51,17 @@ export default function Comment(props: CommentProps) {
     username: session?.user?.name ?? "",
     content: "",
   });
+
+  useEffect(()=>{
+    setFormData({
+      parentid: id,
+      userid: session?.user?.email ?? '',
+      username: session?.user?.name ?? '',
+      content: ''
+    })
+  },[session?.user.name, session?.user.email, id])
+
+
   const [totalComment, setTotalComment] = useState<CommentType[]>();
 
   const params = useParams();
@@ -65,6 +76,7 @@ export default function Comment(props: CommentProps) {
     };
     fetchData();
   }, [params.id]);
+
 
   const cmtSubmit = async () => {
     try {
