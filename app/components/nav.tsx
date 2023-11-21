@@ -3,12 +3,14 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import Logout from "./logout";
 import Login from "./login";
+
 interface userInfo {
   user: {
     name: string;
     email?: string;
     image?: string;
     level?: number;
+    nickname?: string;
   };
 }
 
@@ -25,7 +27,7 @@ export default async function Nav() {
         <>
           <div className="w-full h-12 flex items-center justify-end space-x-4 pr-5">
             <p>
-              <span className="font-bold">{session && session.user?.name}</span>
+              <span className="font-bold">{session && session.user?.nickname}</span>
               님 반갑습니다.
             </p>
             <Logout />

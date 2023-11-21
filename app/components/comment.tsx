@@ -1,19 +1,3 @@
-/* 
-
-const {data: session } = useCustomSession();
-const data = {
-  id: 5,
-  name: "홍길동",
-  email : "abcd@naver.com"
-}
-변수 내에 중괄호 {} 가 들어가면 구조 분해 할당(destructuring assignment) > 해당 객체에서 그 속성을 추출해서 새로운 변수로 할당할 때 사용
-
-예를 들어....data .id 이걸 변수로 저장을 따로 하고 싶다면
-const {id} = data > const id = 5 값이 저장된다.
-data.id 로 사용 가능...
-
-
-*/
 "use client";
 import { useEffect, useState } from "react";
 import { useCustomSession } from "../sessions";
@@ -115,7 +99,8 @@ export default function Comment(props: CommentProps) {
                 const formatDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
                 return (
                   <p className="w-full flex justify-between py-2" key={i}>
-                    <span>{e.content} </span>
+                    <span className="basis-1/6">{e.username} </span>
+                    <span className="basis-1/2">{e.content} </span>
                     <span>{formatDate}</span>
                   </p>
                 );
@@ -136,3 +121,19 @@ export default function Comment(props: CommentProps) {
     </>
   );
 }
+
+
+/* 
+
+const {data: session } = useCustomSession();
+const data = {
+  id: 5,
+  name: "홍길동",
+  email : "abcd@naver.com"
+}
+변수 내에 중괄호 {} 가 들어가면 구조 분해 할당(destructuring assignment) > 해당 객체에서 그 속성을 추출해서 새로운 변수로 할당할 때 사용
+
+예를 들어....data .id 이걸 변수로 저장을 따로 하고 싶다면
+const {id} = data > const id = 5 값이 저장된다.
+data.id 로 사용 가능..
+*/

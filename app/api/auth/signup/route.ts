@@ -6,14 +6,15 @@ import { RowDataPacket } from "mysql2";
 interface formType{
   email : string;
   password: string;
-  name: string
+  name: string;
+  nickname: string;
 }
 
 export const POST = async (
   req: NextRequest
 ) : Promise<NextResponse> =>{
   if(req.method === 'POST'){
-    const {email, password, name}: formType = JSON.parse(await req.text());
+    const {email, password, name, nickname}: formType = JSON.parse(await req.text());
 
     if(!email || !password || !name){
       return NextResponse.json({message: "데이터가 부족합니다."})
@@ -29,10 +30,12 @@ export const POST = async (
     if(memberCnt > 0){
       return NextResponse.json({message: "해당 이메일이 존재합니다."})
     }else{
-      await db.query('insert into jun_database.member (email, password, name) values(?,?,?)',[email, hash, name]);
+      await db.query('insert into jun_database.member (email, password, name, nickname) values(?,?,?,?)',[email, hash, name, nickname]);
       const data = {
         email : email,
-        password : password
+        password : password,
+        name: name,
+        nickname: nickname
       }
 
       return NextResponse.json({message: "성공", data: data})

@@ -47,7 +47,7 @@ export default function ChartCom() {
   };
   return (
     <>
-      <Bar data={data} options={options} />
+      {/* <Bar data={data} options={options} /> */}
       {/* <Chart /> */}
     </>
   );

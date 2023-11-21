@@ -9,6 +9,7 @@ interface formType {
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useCustomSession } from "../sessions";
+import { redirect } from "react-router-dom";
 
 export default function Write() {
   const { data: session } = useCustomSession();
@@ -33,7 +34,7 @@ export default function Write() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     console.log(formData);
   };
-  
+
   const submitEvent = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
@@ -88,6 +89,7 @@ export default function Write() {
         >
           취소
         </Link>
+
         <button className="bg-orange-500 text-white px-4 py-2 rounded shadow-md hover:bg-orange-600 focus:outline-none">
           등록
         </button>
