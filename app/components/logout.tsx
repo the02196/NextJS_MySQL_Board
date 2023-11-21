@@ -1,9 +1,16 @@
-'use client'
+"use client";
 
-import { signOut } from "next-auth/react"
+import { signOut } from "next-auth/react";
 
-export default function Logout(){
-    return(
-        <button onClick={()=>{signOut()}}>로그아웃</button>
-    )
+export default function Logout() {
+  return (
+    <button
+      className="btn"
+      onClick={() => {
+        signOut();
+      }}
+    >
+      logout
+    </button>
+  );
 }

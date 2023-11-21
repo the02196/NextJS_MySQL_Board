@@ -19,17 +19,28 @@ export default function Search() {
   };
   const searchSubmit = () => {
     if (keyword === "") {
-        inputRef.current?.focus()    
-        alert("검색어를 입력해주세요");
+      inputRef.current?.focus();
+      alert("검색어를 입력해주세요");
     } else {
       window.location.href = `/search/${keyword}`;
     }
   };
 
   return (
-    <div className="flex justify-center gap-x-5">
-      <input ref={inputRef} onChange={searchValue} type="text" className="border p-2" />
-      <button onClick={searchSubmit}>검색</button>
+    <div className="relative flex justify-center gap-x-5 max-w-5xl px-6 mx-auto ">
+      <input
+        ref={inputRef}
+        placeholder="Please enter your keyword(s) to search"
+        onChange={searchValue}
+        type="text"
+        className="text-mono px-8 placeholder:text-xl placeholder:text-slate-500 focus:border-[rgba(255,255,255,0.3)] focus:outline-[rgba(255,255,255,0.3)] w-[100%] py-5 text-xl rounded-full backdrop-blur-md bg-[rgba(255,255,255,0.5)] p-2"
+      />
+      <button
+        className="text-mono absolute top-[50%] right-[23px] px-10 bg-[rgba(255,255,255,0.8)] w-50 text-lg translate-y-[-50%] rounded-full font-bold h-full "
+        onClick={searchSubmit}
+      >
+        search
+      </button>
     </div>
   );
 }

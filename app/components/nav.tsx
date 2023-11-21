@@ -23,26 +23,37 @@ export default async function Nav() {
 
   return (
     <>
-      {session && session.user?.email ? (
-        <>
-          <div className="w-full h-12 flex items-center justify-end space-x-4 pr-5">
-            <p>
-              <span className="font-bold">{session && session.user?.nickname}</span>
+      <div className="w-full flex flex-col items-center justify-center pt-14 py-5 px-5">
+        
+          <h1 className="text-[67px] font-extrabold text-slate-900 mb-8">
+            Test Board with NextJS & MySQL
+          </h1>
+      
+        {session && session.user?.email ? (
+          <>
+            <p className="w-[100%] justify-center text-xl py-6 flex space-x-4">
+              <span className="font-bold">
+                {session && session.user?.nickname}
+              </span>
               님 반갑습니다.
             </p>
+            <div className="btn-wrap">
+
             <Logout />
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="flex justify-end space-x-3 border-y p-3">
-            <Link href="/">메인</Link>
-            <Link href="/admin">관리자</Link>
-            <Link href="/register">회원가입</Link>
-            <Login />
-          </div>
-        </>
-      )}
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="btn-wrap flex space-x-3">
+              {/* <Link href="/">메인</Link> */}
+              {/* <Link href="/admin">관리자</Link> */}
+              <Link  href="/register">
+                <button className="btn">signin</button></Link>
+              <Login />
+            </div>
+          </>
+        )}
+      </div>
     </>
   );
 }

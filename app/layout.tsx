@@ -25,6 +25,8 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <AuthSession>
+          <div className="bg-grid" />
+
           <Nav />
           {children}
         </AuthSession>

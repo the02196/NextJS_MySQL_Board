@@ -86,7 +86,7 @@ export default async function Detail({ params }: { params?: { id?: number } }) {
       {results.length > 0 && (
         <>
           <div className="w-full">
-            <div className="mx-auto w-[80%] shadow">
+            <div className="mx-auto w-[80%] shadow bg-white">
               <div className="py-7 items-center flex mx-auto w-[90%] justify-between">
                 <span className="text-4xl font-bold">
                   {" "}

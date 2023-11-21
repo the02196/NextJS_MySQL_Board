@@ -46,10 +46,10 @@ export default function LoginPage() {
       <div className="flex justify-between w-full flex-wrap items-center py-48">
         <div className="basis-9/12 sm:basis-7/12 md:basis-5/12 lg:basis-4/12 mx-auto">
           <div className="text-start">
-            <p>이메일</p>
+            <p>E-mail</p>
             <input
               type="text"
-              className="px-2 border border-l-orange-500 border-l-2 w-full focus:outline-gray-400 h-[50px] mx-auto"
+              className="px-2 border border-l-gray-500 border-l-2 w-full focus:outline-gray-400 h-[50px] mx-auto"
               placeholder="example@naver.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -59,7 +59,7 @@ export default function LoginPage() {
             <p>비밀번호</p>
             <input
               type="password"
-              className="px-2 border border-l-orange-500 border-l-2 h-[50px] w-full mx-auto focus:outline-gray-400"
+              className="px-2 border border-l-gray-500 border-l-2 h-[50px] w-full mx-auto focus:outline-gray-400"
               placeholder="비밀번호를 입력해주세요"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
