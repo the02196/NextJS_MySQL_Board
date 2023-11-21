@@ -66,7 +66,7 @@ export default async function PostsList({
               <Link
                 key={i}
                 href={`/posts/${pageNumber}`}
-                className="bg-white border px-3 py-2 text-sm rounded"
+                className="bg-white border px-3 py-2 font-bold text-sm rounded"
               >
                 {pageNumber}
               </Link>
@@ -84,8 +84,9 @@ export default async function PostsList({
       <div className="mx-auto max-w-5xl p-6 font-mono">
         <div className="flex justify-end item-center mb-6">
           {sessions && (
-            <Link href="/write" className="bg-[rgba(255,255,255,0.5)] backdrop-blur-md border-gray-200 shadow-md px-6 py-2 text-lg">
-              post
+            <Link href="/write">
+              <button className="bg-[#fdfdfd] rounded-md shadow-md px-6 py-2 text-md font-bold">post</button>
+              
             </Link>
           )}
         </div>

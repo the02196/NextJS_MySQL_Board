@@ -47,10 +47,10 @@ export default function EditDelete({ results }: propsType) {
           session.user.level === 10) && (
           <>
             <Link href={`/edit/${results.id}`}>
-              <button className="px-4 py-2 rounded shadow ">수정</button>
+              <button className="px-4 py-2 rounded shadow ">edit</button>
             </Link>
            
-            <button onClick={()=>{deletePost(results.id)}} className="px-4 py-2 rounded shadow ">삭제</button>
+            <button onClick={()=>{deletePost(results.id)}} className="px-4 py-2 rounded shadow ">delete</button>
             
           </>
         )}

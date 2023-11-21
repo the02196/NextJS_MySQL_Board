@@ -24,8 +24,9 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthSession>
+        <div className="bg-gradient"/> 
           <div className="bg-grid" />
+        <AuthSession>
 
           <Nav />
           {children}

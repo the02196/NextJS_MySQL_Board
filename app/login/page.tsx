@@ -38,7 +38,7 @@ export default function LoginPage() {
   };
 
   if (session && session.user) {
-    return <p>이미 로그인 함</p>;
+    return <p>You are already logged in.</p>;
   }
 
   return (
@@ -49,83 +49,87 @@ export default function LoginPage() {
             <p>E-mail</p>
             <input
               type="text"
-              className="px-2 border border-l-gray-500 border-l-2 w-full focus:outline-gray-400 h-[50px] mx-auto"
+              className="rounded-md px-2 border border-l-gray-500 border-l-2 w-full focus:outline-gray-400 h-[50px] mx-auto"
               placeholder="example@naver.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="text-start mt-3">
-            <p>비밀번호</p>
+            <p>Password</p>
             <input
               type="password"
-              className="px-2 border border-l-gray-500 border-l-2 h-[50px] w-full mx-auto focus:outline-gray-400"
-              placeholder="비밀번호를 입력해주세요"
+              className="rounded-md px-2 border border-l-gray-500 border-l-2 h-[50px] w-full mx-auto focus:outline-gray-400"
+              placeholder="Please enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="flex justify-between">
+          <div className="mt-5 flex justify-between">
             <button
-              className="basis-[48%] px-6 py-2.5 bg-gray-800 text-white font-medium text-base mt-2 leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out"
+              className="basis-[48%] px-6 py-2.5 bg-gray-800 text-white font-medium text-base mt-2 leading-tight  rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out"
               onClick={SignIn}
             >
-              로그인
+              login
             </button>
-            <button className="basis-[48%] px-6 py-2.5 bg-green-400 text-white font-medium text-base mt-2 leading-tight uppercase rounded shadow-md hover:bg-green-500 hover:shadow-lg focus:bg-green-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-500 active:shadow-lg transition duration-150 ease-in-out">
-              <Link href="/register">회원가입</Link>
+            <button className="basis-[48%] px-6 py-2.5 bg-slate-400 text-white font-medium text-base mt-2 leading-tight  rounded shadow-md hover:bg-slate-500 hover:shadow-lg focus:bg-slate-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-500 active:shadow-lg transition duration-150 ease-in-out">
+              <Link href="/register">signin</Link>
             </button>
           </div>
 
-          <h3 className="text-xl font-bold mt-8 ">SNS 로그인</h3>
-          <div className="w-full flex mb-7 justify-between">
+         
+          <div className="w-full flex mt-7 justify-between">
             <button
-              className="basis-1/5 mt-3 mx-auto py-2  text-white"
+              className="font-bold  btn bg-[#fdfdfd] basis-1/5 mt-3 py-2 "
               onClick={() => signIn("kakao")}
             >
-              <Image
+              {/* <Image
                 src="./sns/kakao_talk.svg"
                 width={50}
                 height={50}
                 alt="naver"
                 className="mx-auto"
-              />
+              /> */}
+              Kakao
             </button>
             <button
-              className="basis-1/5 mt-3 mx-auto py-2  text-white"
+              className="font-bold  btn bg-[#fdfdfd] basis-1/5 mt-3  py-2"
               onClick={() => signIn("google")}
             >
-              <Image
+              {/* <Image
                 src="./sns/google.svg"
                 width={50}
                 height={50}
                 alt="naver"
                 className="mx-auto"
-              />
+              /> */}
+              Google
             </button>
             <button
-              className="basis-1/5 mt-3 mx-auto py-2  text-white "
+              className="font-bold btn bg-[#fdfdfd] basis-1/5 mt-3  py-2 "
               onClick={() => signIn("naver")}
             >
-              <Image
+              {/* <Image
                 src="./sns/naver.svg"
                 width={50}
                 height={50}
                 alt="naver"
                 className="mx-auto"
-              />
+              /> */}
+              Naver
             </button>
             <button
-              className="basis-1/5 mt-3 mx-auto py-2  text-white "
+              className="font-bold  btn bg-[#fdfdfd] basis-1/5 mt-3 py-2  "
               onClick={() => signIn("github")}
             >
-              <Image
+              {/* <Image
                 src="./sns/github-mark.svg"
                 width={50}
                 height={50}
                 alt="naver"
                 className="mx-auto"
-              />
+              /> */}
+              Github
             </button>
           </div>
         </div>

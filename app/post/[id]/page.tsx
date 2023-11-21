@@ -85,15 +85,15 @@ export default async function Detail({ params }: { params?: { id?: number } }) {
     <>
       {results.length > 0 && (
         <>
-          <div className="w-full">
-            <div className="mx-auto w-[80%] shadow bg-white">
+          <div className="max-w-5xl mx-auto">
+            <div className="mx-auto rounded-lg shadow bg-white">
               <div className="py-7 items-center flex mx-auto w-[90%] justify-between">
-                <span className="text-4xl font-bold">
+                <span className="text-4xl mt-6 font-bold">
                   {" "}
                   {post && post.title}
                 </span>
                 <span>
-                  <b>조회수:</b> {post.count}
+                  <b>views:</b> {post.count}
                 </span>
               </div>
               <div className="h-[1px] bg-gray-200 w-[90%] mx-auto"></div>
@@ -105,7 +105,7 @@ export default async function Detail({ params }: { params?: { id?: number } }) {
                 <p className="block border p-4 text-center my-5 rounded-md">
                   {" "}
                   <Link href="/login">
-                    로그인 이후 댓글을 작성할 수 있습니다.
+                    You can write a comment after logging in.
                   </Link>{" "}
                 </p>
               )}
@@ -114,7 +114,7 @@ export default async function Detail({ params }: { params?: { id?: number } }) {
                  <EditDelete results={post as propsType['results']}/>
                   <Link href={`/`}>
                     <button className="bg-gray-800 text-white px-4 py-2 rounded shadow ">
-                      목록
+                      back
                     </button>
                   </Link>
                 </div>

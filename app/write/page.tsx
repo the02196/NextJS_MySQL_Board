@@ -62,7 +62,7 @@ export default function Write() {
   console.log(session);
   return (
     <>
-      <form method="post" onSubmit={submitEvent}>
+      {/* <form method="post" onSubmit={submitEvent}>
         <input
           type="text"
           name="name"
@@ -72,10 +72,10 @@ export default function Write() {
         />
         <input
           type="text"
-          className="shadow text-gray-700 text-sm mb-2 border"
           name="title"
           onChange={changeEvent}
           defaultValue={formData.title}
+          className="shadow text-gray-700 text-sm mb-2 border"
         />
         <textarea
           name="content"
@@ -93,7 +93,58 @@ export default function Write() {
         <button className="bg-orange-500 text-white px-4 py-2 rounded shadow-md hover:bg-orange-600 focus:outline-none">
           등록
         </button>
-      </form>
+      </form> */}
+      <div className="w-full h-full p-10 ">
+        <div className="rounded-lg bg-[#fdfdfd]  max-w-7xl mx-auto lg:mx-13 flex flex-col">
+          <form
+            className="border-[#e8e8e8] border-[1px] p-10 rounded-lg"
+            method="post"
+            onSubmit={submitEvent}
+          >
+            <div className="flex items-center border-gray-200 ">
+              <p className="w-[70px] font-semibold">Name</p>
+              <input
+                type="text"
+                name="username"
+                value={session?.user?.name ?? ""}
+                onChange={changeEvent}
+                className="w-1/4 my-3 ml-3 p-3 border border-[#999]"
+                disabled
+              />
+            </div>
+            <div className="flex items-center border-gray-200">
+              <p className="w-[70px] font-semibold">Title</p>
+              <input
+                type="text"
+                name="title"
+                onChange={changeEvent}
+                defaultValue={formData.title}
+                className="my-5 w-[85.5%] ml-3 p-3 border border-[#999]"
+              />
+            </div>
+            <div className="flex items-center border-gray-200 ">
+              <p className="w-[70px] font-semibold">Text</p>
+              <textarea
+                name="content"
+                onChange={changeEvent}
+                defaultValue={formData.content}
+                className="min-w-[85.5%] max-w-[85.5%] min-h-[200px] max-h-[200px] my-5 w-[85.5%] ml-3 p-3 border border-[#999]"
+              ></textarea>
+            </div>
+            <div className="flex space-x-3 justify-end mt-7">
+              <button className="  px-4 py-2 rounded shadow-md focus:outline-none">
+                post
+              </button>
+              <Link
+                href="javascript:window.history.go(-1)"
+                className="inline-block bg-gray-800 text-white px-4 py-2 rounded shadow focus:outline-none"
+              >
+                back
+              </Link>
+            </div>
+          </form>
+        </div>
+      </div>
     </>
   );
 }

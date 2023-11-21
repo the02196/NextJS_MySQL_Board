@@ -6,7 +6,7 @@ export default function Login(){
     window.location.href="/login";
   }
   return(
-    <button className="btn" onClick={redirectTo}>login</button>
+    <button className="btn bg-[#fdfdfd]" onClick={redirectTo}>login</button>
   )
 }
 

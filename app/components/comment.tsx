@@ -86,7 +86,7 @@ export default function Comment(props: CommentProps) {
       {session && session.user && (
         <>
           <div className="w-[90%] mx-auto py-7">
-            <p className="font-bold mb-5 text-xl">댓글</p>
+            <p className="font-bold mb-5 text-xl">Comments</p>
             {totalComment &&
               totalComment.map((e, i) => {
                 const date = new Date(e.date);
@@ -114,7 +114,7 @@ export default function Comment(props: CommentProps) {
             className="border w-[70%] md:w-[75%] lg:w-[85%] p-2 border-gray-200 rounded"
           />
 
-          <button className="p-2 px-4 bg-gray-500 text-white rounded" onClick={cmtSubmit}>보내기</button>
+          <button className="p-2 px-4 bg-gray-500 text-white rounded" onClick={cmtSubmit}>send</button>
           </div>
         </>
       )}

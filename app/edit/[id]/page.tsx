@@ -101,12 +101,12 @@ export default function Edit(props: EditProps) {
     <>
     
        {post ? (
-        <div className="w-full h-full p-10 bg-white">
-          <div className="max-w-7xl mx-auto lg:mx-13 flex flex-col">
-            <p className="font-bold text-[1.6rem] lg:text-[1.75rem] text-left my-5 mb-12 ">글수정</p>
+        <div className="w-full h-full p-10 ">
+          <div className="bg-[#fdfdfd] rounded-lg max-w-7xl mx-auto lg:mx-13 flex flex-col">
+ 
             <form className="border-[#e8e8e8] border-[1px] p-10 rounded-lg" method="post" onSubmit={submitEvent}>
-              <div className="flex items-center border-gray-200 border-b-[1px]">
-                <p className="w-[70px] font-semibold">작성자</p>
+              <div className="flex items-center border-gray-200 ">
+                <p className="w-[70px] font-semibold">Name</p>
                 <input
                   type="text"
                   name="username"
@@ -116,8 +116,8 @@ export default function Edit(props: EditProps) {
                   disabled
                 />
               </div>
-              <div className="flex items-center border-gray-200 border-b-[1px]">
-                <p className="w-[70px] font-semibold">제목</p>
+              <div className="flex items-center border-gray-200 ">
+                <p className="w-[70px] font-semibold">Title</p>
                 <input
                   type="text"
                   name="title"
@@ -126,8 +126,8 @@ export default function Edit(props: EditProps) {
                   className="my-5 w-[85.5%] ml-3 p-3 border border-[#999]"
                 />
               </div>
-              <div className="flex items-center border-gray-200 border-b-[1px]">
-                <p className="w-[70px] font-semibold">내용</p>
+              <div className="flex items-center border-gray-200 ">
+                <p className="w-[70px] font-semibold">Text</p>
                 <textarea
                   name="content"
                   onChange={changeEvent}
@@ -137,10 +137,10 @@ export default function Edit(props: EditProps) {
               </div>
               <div className="flex space-x-3 justify-end mt-7">
                 <button className="  px-4 py-2 rounded shadow-md  focus:outline-none">
-                 수정
+                 edit
                 </button>
-                <Link href="/" className="inline-block bg-gray-800 text-white px-4 py-2 rounded shadow focus:outline-none">
-                  목록
+                <Link href="javascript:window.history.go(-1)" className="inline-block bg-gray-800 text-white px-4 py-2 rounded shadow focus:outline-none">
+                  back
                 </Link>
               </div>
             </form>

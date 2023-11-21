@@ -25,19 +25,20 @@ export default async function Nav() {
     <>
       <div className="w-full flex flex-col items-center justify-center pt-14 py-5 px-5">
         
-          <h1 className="text-[67px] font-extrabold text-slate-900 mb-8">
+          <h1 className="text-[60px] font-extrabold text-slate-900 mb-8">
             Test Board with NextJS & MySQL
           </h1>
       
         {session && session.user?.email ? (
           <>
             <p className="w-[100%] justify-center text-xl py-6 flex space-x-4">
+              Welcome&nbsp;
               <span className="font-bold">
                 {session && session.user?.nickname}
               </span>
-              님 반갑습니다.
+              &nbsp;to board!
             </p>
-            <div className="btn-wrap">
+            <div className="btn-wrap font-bold rounded-lg bg-[#fdfdfd]">
 
             <Logout />
             </div>
@@ -48,7 +49,7 @@ export default async function Nav() {
               {/* <Link href="/">메인</Link> */}
               {/* <Link href="/admin">관리자</Link> */}
               <Link  href="/register">
-                <button className="btn">signin</button></Link>
+                <button className="btn bg-[#fdfdfd]">signin</button></Link>
               <Login />
             </div>
           </>
