@@ -20,7 +20,7 @@ export default function Search() {
   const searchSubmit = () => {
     if (keyword === "") {
       inputRef.current?.focus();
-      alert("검색어를 입력해주세요");
+      alert("You haven't entered a keyword(s) in the search bar yet.");
     } else {
       window.location.href = `/search/${keyword}`;
     }

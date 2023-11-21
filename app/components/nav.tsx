@@ -38,7 +38,7 @@ export default async function Nav() {
               </span>
               &nbsp;to board!
             </p>
-            <div className="btn-wrap font-bold rounded-lg bg-[#fdfdfd]">
+            <div className="btn-wrap rounded-lg bg-[#fdfdfd]">
 
             <Logout />
             </div>
@@ -49,7 +49,7 @@ export default async function Nav() {
               {/* <Link href="/">메인</Link> */}
               {/* <Link href="/admin">관리자</Link> */}
               <Link  href="/register">
-                <button className="btn bg-[#fdfdfd]">signin</button></Link>
+                <button className="btn bg-[#fdfdfd]">sign up</button></Link>
               <Login />
             </div>
           </>

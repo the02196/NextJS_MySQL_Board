@@ -113,7 +113,6 @@ export default function Comment(props: CommentProps) {
             onChange={commentValue}
             className="border w-[70%] md:w-[75%] lg:w-[85%] p-2 border-gray-200 rounded"
           />
-
           <button className="p-2 px-4 bg-gray-500 text-white rounded" onClick={cmtSubmit}>send</button>
           </div>
         </>

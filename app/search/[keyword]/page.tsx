@@ -26,7 +26,7 @@ export default async function SearchResult({
       <Search />
       <div className="px-6 max-w-5xl mx-auto flex flex-col items-center">
         <Link href={"/"}>
-          <button className="btn bg-[#fdfdfd] font-bold mt-10">go to main page</button>
+          <button className="btn bg-[#fdfdfd] mt-10">go to main page</button>
         </Link>
         <p className="text-xl py-8">
           <b>keyword : </b>

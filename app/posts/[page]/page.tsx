@@ -27,9 +27,10 @@ export default async function PostsList({
   const offset = (currentPage - 1) * perPage;
 
   const [results] = await db.query<RowDataPacket[]>(
-    "SELECT * FROM jun_database.board order by date DESC limit ? offset ?",
+    "SELECT * FROM jun_database.board ORDER BY date DESC LIMIT ? OFFSET ?",
     [perPage, offset]
   );
+  
   const [countResult] = await db.query<RowDataPacket[]>(
     "select count(*) as cnt from jun_database.board"
   );
@@ -53,9 +54,9 @@ export default async function PostsList({
         {currentPage > 5 && (
           <Link
             href={`/posts/${prevStart}`}
-            className="bg-white border px-3 py-1 text-sm rounded"
+            className="font-bold  flex items-center bg-white border px-3 py-1 text-sm rounded"
           >
-            이전
+            prev
           </Link>
         )}
         {Array(endPage - startPage + 1)
@@ -74,10 +75,10 @@ export default async function PostsList({
           })}
         {nextStart <= lastPage && (
           <Link
-            href={`/posts/${prevStart}`}
-            className="bg-white border px-1.5 py-1 text-sm rounded"
+            href={`/posts/${nextStart}`}
+            className="font-bold flex items-center bg-white border px-1.5 py-1 text-sm rounded"
           >
-            다음
+            next
           </Link>
         )}
       </div>
@@ -127,7 +128,6 @@ export default async function PostsList({
                           <p>{e.title}</p>
                           <p className="two-lines text-slate-600 text-sm font-normal">{e.content}</p>
                           </Link>
-                        
                       </li>
                       <li className="basis-2/12 text-center">
                         {e.username}

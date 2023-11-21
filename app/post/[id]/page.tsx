@@ -102,10 +102,11 @@ export default async function Detail({ params }: { params?: { id?: number } }) {
               {session ? (
                 <Comment id={post.id} />
               ) : (
-                <p className="block border p-4 text-center my-5 rounded-md">
+                <p className="block w-[90%] mx-auto p-4 text-center my-5 rounded-md">
                   {" "}
+                    You can write a comment after 
                   <Link href="/login">
-                    You can write a comment after logging in.
+                  <button className="btn ml-2">logging in</button>
                   </Link>{" "}
                 </p>
               )}

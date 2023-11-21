@@ -24,7 +24,11 @@ export default function LoginPage() {
     if (typeof window !== "undefined") {
       const prevPage = sessionStorage.getItem("preUrl") || "/";
       // console.log(prevPage);
-      setPreUrl(prevPage);
+      if (prevPage === "http://localhost:3000/register") {
+        setPreUrl("/");
+      } else {
+        setPreUrl(prevPage);
+      }
     }
   }, []);
 
@@ -44,7 +48,7 @@ export default function LoginPage() {
   return (
     <>
       <div className="flex justify-between w-full flex-wrap items-center py-48">
-        <div className="basis-9/12 sm:basis-7/12 md:basis-5/12 lg:basis-4/12 mx-auto">
+        <div className="basis-9/12 bg-white p-14 rounded-lg shadow-md sm:basis-7/12 md:basis-5/12 lg:basis-4/12 mx-auto">
           <div className="text-start">
             <p>E-mail</p>
             <input
@@ -73,65 +77,74 @@ export default function LoginPage() {
               login
             </button>
             <button className="basis-[48%] px-6 py-2.5 bg-slate-400 text-white font-medium text-base mt-2 leading-tight  rounded shadow-md hover:bg-slate-500 hover:shadow-lg focus:bg-slate-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-500 active:shadow-lg transition duration-150 ease-in-out">
-              <Link href="/register">signin</Link>
+              <Link href="/register">sign up</Link>
             </button>
           </div>
 
-         
           <div className="w-full flex mt-7 justify-between">
             <button
-              className="font-bold  btn bg-[#fdfdfd] basis-1/5 mt-3 py-2 "
+              className="flex items-center justify-center btn bg-[#fdfdfd] basis-1/5 mt-3 py-4 "
               onClick={() => signIn("kakao")}
             >
-              {/* <Image
-                src="./sns/kakao_talk.svg"
-                width={50}
-                height={50}
-                alt="naver"
-                className="mx-auto"
-              /> */}
-              Kakao
+              <div className="basis-4/12">
+                <Image
+                  src="./sns/kakao_talk.svg"
+                  width={20}
+                  height={20}
+                  alt="naver"
+                />
+              </div>
+              <p className="basis-1/12">kakao</p>
             </button>
             <button
-              className="font-bold  btn bg-[#fdfdfd] basis-1/5 mt-3  py-2"
+              className="flex items-center justify-center btn bg-[#fdfdfd] basis-1/5 mt-3  py-2"
               onClick={() => signIn("google")}
             >
-              {/* <Image
-                src="./sns/google.svg"
-                width={50}
-                height={50}
-                alt="naver"
-                className="mx-auto"
-              /> */}
-              Google
+              <div className="basis-4/12">
+                {" "}
+                <Image
+                  src="./sns/google.svg"
+                  width={20}
+                  height={20}
+                  alt="naver"
+                />
+              </div>
+              <p className="basis-1/12">google</p>
             </button>
             <button
-              className="font-bold btn bg-[#fdfdfd] basis-1/5 mt-3  py-2 "
+              className="flex items-center justify-center btn bg-[#fdfdfd] basis-1/5 mt-3  py-2 "
               onClick={() => signIn("naver")}
             >
-              {/* <Image
-                src="./sns/naver.svg"
-                width={50}
-                height={50}
-                alt="naver"
-                className="mx-auto"
-              /> */}
-              Naver
+              <div className="basis-4/12">
+                <Image
+                  src="./sns/naver.svg"
+                  width={20}
+                  height={20}
+                  alt="naver"
+                />
+              </div>
+              <p className="basis-1/12">naver</p>
             </button>
             <button
-              className="font-bold  btn bg-[#fdfdfd] basis-1/5 mt-3 py-2  "
+              className="flex items-center justify-center btn bg-[#fdfdfd] basis-1/5 mt-3 py-2  "
               onClick={() => signIn("github")}
             >
-              {/* <Image
-                src="./sns/github-mark.svg"
-                width={50}
-                height={50}
-                alt="naver"
-                className="mx-auto"
-              /> */}
-              Github
+              <div className="basis-4/12">
+                <Image
+                  src="./sns/github-mark.svg"
+                  width={20}
+                  height={20}
+                  alt="naver"
+                />
+              </div>
+              <p className="basis-1/12">github</p>
             </button>
           </div>
+          <Link href={"/"}>
+            <button className="btn w-full bg-[#fdfdfd] mt-8">
+              go to main page
+            </button>
+          </Link>
         </div>
       </div>
     </>
