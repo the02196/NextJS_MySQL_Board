@@ -2,6 +2,8 @@
 
 <img src="./screenshot.png" alt="메인 화면 이미지"/>
 
+배포 링크 : https://next-js-my-sql-board.vercel.app/
+
 ## 기술 스택
 
 - NextJS
