@@ -138,7 +138,38 @@ export default async function PostsList({
                     </ul>
                   );
                 })}
-           
+            <div className="flex justify-center gap-x-5 mt-10">
+        {currentPage > 5 && (
+          <Link
+            href={`/posts/${prevStart}`}
+            className="font-bold  flex items-center bg-white border px-3 py-1 text-sm rounded"
+          >
+            prev
+          </Link>
+        )}
+        {Array(endPage - startPage + 1)
+          .fill(null)
+          .map((_, i) => {
+            const pageNumber = i + startPage;
+            return (
+              <Link
+                key={i}
+                href={`/posts/${pageNumber}`}
+                className="bg-white border px-3 py-2 font-bold text-sm rounded"
+              >
+                {pageNumber}
+              </Link>
+            );
+          })}
+        {nextStart <= lastPage && (
+          <Link
+            href={`/posts/${nextStart}`}
+            className="font-bold flex items-center bg-white border px-1.5 py-1 text-sm rounded"
+          >
+            next
+          </Link>
+        )}
+      </div>
           </div>
        
       </div>

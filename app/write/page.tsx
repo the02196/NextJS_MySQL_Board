@@ -48,6 +48,8 @@ export default function Write() {
       if (res.ok) {
         const data = await res.json();
         console.log(data.message);
+        alert('The post has been successfully registered');
+        window.location.href = '/'
       } else {
         const errorData = await res.json();
         console.log(errorData.error);

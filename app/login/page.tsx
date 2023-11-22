@@ -70,15 +70,16 @@ export default function LoginPage() {
             />
           </div>
           <div className="mt-5 flex justify-between">
+          <button className="basis-[48%] px-6 py-2.5 bg-slate-400 text-white font-medium text-base mt-2 leading-tight  rounded shadow-md hover:bg-slate-500 hover:shadow-lg focus:bg-slate-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-500 active:shadow-lg transition duration-150 ease-in-out">
+              <Link href="/register">sign up</Link>
+            </button>
             <button
               className="basis-[48%] px-6 py-2.5 bg-gray-800 text-white font-medium text-base mt-2 leading-tight  rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out"
               onClick={SignIn}
             >
               login
             </button>
-            <button className="basis-[48%] px-6 py-2.5 bg-slate-400 text-white font-medium text-base mt-2 leading-tight  rounded shadow-md hover:bg-slate-500 hover:shadow-lg focus:bg-slate-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-500 active:shadow-lg transition duration-150 ease-in-out">
-              <Link href="/register">sign up</Link>
-            </button>
+          
           </div>
 
           <div className="w-full flex mt-7 justify-between">

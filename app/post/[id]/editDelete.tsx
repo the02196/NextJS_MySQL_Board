@@ -26,10 +26,10 @@ const deletePost = async(e:number) => {
             body: JSON.stringify({id:e})
         })
         if(res.ok){
-            alert("정상적으로 삭제 되었습니다.")
+            alert("The post has been successfully deleted")
             window.location.href= "/"
         }else{
-            alert("삭제에 실패하였습니다.")
+            alert("Failed to delete post")
         }
     }catch(error){
         console.log(error)

@@ -38,7 +38,7 @@ export default function Edit(props: EditProps) {
         if(res.ok){
             const data = await res.json();
             console.log(data.message);
-            alert('정상적으로 수정 하였습니다');
+            alert('The post has been successfully edited');
             window.location.href = '/'
         }else{
             const errorData = await res.json();

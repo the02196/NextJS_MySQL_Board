@@ -55,7 +55,7 @@ export default async function Detail({ params }: { params?: { id?: number } }) {
     [postId, userIp]
   );
   const totalCnt = countResult[0].cnt;
-  console.log(totalCnt + "개");
+  console.log(totalCnt + "count");
   // 내 아이피 기준으로 특정 게시물의 조회수 totalCnt 출력
   if (results.length > 0) {
     if (totalCnt === 0) {

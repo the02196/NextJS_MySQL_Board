@@ -40,7 +40,7 @@ export default function Register() {
         const data = await res.json();
         const result = data.data;
         console.log(result);
-        if (data.message === "성공") {
+        if (data.message === "success") {
           alert("Registration completed.");
           // window.location.href='/';
           signIn("credentials", {
