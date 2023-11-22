@@ -8,7 +8,7 @@
 // } from "chart.js/auto";
 // import { useEffect } from "react";
 
-// export default function ChartCom() {
+export default function ChartCom() {
 //   useEffect(() => {
 //     Chart.register(...registerables, BarElement, CategoryScale, LinearScale);
 //   }, []);
@@ -45,10 +45,10 @@
 //       },
 //     },
 //   };
-//   return (
-//     <>
-//       {/* <Bar data={data} options={options} /> */}
-//       {/* <Chart /> */}
-//     </>
-//   );
-// }
+  return (
+    <>
+      {/* <Bar data={data} options={options} /> */}
+      {/* <Chart /> */}
+    </>
+  );
+}
