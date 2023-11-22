@@ -28,7 +28,7 @@ interface propsType {
 }
 // fetch문이 업데이트 되면서 axios를 다운로드 하지 않아도 되게 되었다.
 async function GetIp() {
-  const res = await fetch("http://localhost:3000/api/get-ip");
+  const res = await fetch("https://next-js-my-sql-board.vercel.app/api/get-ip");
   const data = res.json();
   if (!res.ok) {
     alert("에러가 발생하였습니다.");
